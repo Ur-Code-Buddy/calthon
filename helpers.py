@@ -1,4 +1,4 @@
-def parse_nested_brakets(expression):
+def parse_nested_brakets(raw_expression):
     """
     parses a string expression containing and returns a nested list of that expression
 
@@ -9,6 +9,7 @@ def parse_nested_brakets(expression):
         list: a nested list representation of the expression.
 
     """
+    expression = "".join(raw_expression.split() )
     stack = []  #for keeping track of nested expressions
     result = ''  #to add characters of present expression
     nested_expressions = []  #to store the nested expression 
