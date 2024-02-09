@@ -15,7 +15,7 @@ class Calculator:
         self.entry = tk.Entry(self.master, textvariable=self.result_var, font=("Serif", 20), bd=1, relief=tk.SOLID, bg="#add8e6")
         self.entry.grid(row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
 
-        tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=0, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=5, column=1, sticky="nsew")
+        tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=5, column=1, sticky="nsew")
         tk.Button(self.master, text="0", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("0")).grid(row=5, column=0, sticky="nsew")
         tk.Button(self.master, text="1", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("1")).grid(row=4, column=0, sticky="nsew")
         tk.Button(self.master, text="2", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("2")).grid(row=4, column=1, sticky="nsew")
@@ -33,8 +33,8 @@ class Calculator:
 
         tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=2, column=3, sticky="nsew")
         tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=1, column=3, sticky="nsew")
-        tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=0, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
-        tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=0, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=4, column=3, sticky="nsew")
+        tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
+        tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=4, column=3, sticky="nsew")
 
         tk.Button(self.master, text="=", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=self.calculate_result).grid(row=5, column=3, sticky="nsew")
         tk.Button(self.master, text="←", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=self.backspace).grid(row=5, column=2, sticky="nsew")
