@@ -80,14 +80,24 @@ class Calculator:
 
     #TODO: COMPLETE THE FUNCTIONS TOO
     def calculate_result(self):
+        expression = self.result_var.get()
+        if expression:
+            result = eval(expression)
+            self.result_var.set(result)
+        else:
+            result = None
         pass
 
     def backspace(self):
+        current_text = self.result_var.get()
+        if current_text:
+            new_text = current_text[:-1]  # Creates a new string excluding the last character 
+            self.result_var.set(new_text) # Updates the screen to the new text
         pass
 
 def main():
     root = tk.Tk()
-    Calculator(root)
+    cal = Calculator(root)
     root.mainloop()
 
 
