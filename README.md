@@ -42,8 +42,8 @@ python app.py
 
 ## Screenshots
 
-![Calculator Screenshot](screenshots/calculator_screenshot1.png)
-![Calculator Screenshot](screenshots/calculator_screenshot2.png)
+![Calculator Screenshot](screenshots/calculator_screenshots1.png)
+![Calculator Screenshot](screenshots/calculator_screenshots2.png)
 
 ## Contributing
 
