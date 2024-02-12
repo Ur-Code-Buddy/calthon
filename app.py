@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from PIL import Image, ImageTk
 from tkinter import messagebox
 
 class Calculator:
@@ -7,7 +7,7 @@ class Calculator:
         self.master = master
         self.master.title("Calculator")
         self.master.geometry("330x380")
-        self.master.configure(bg="#f0f0f0")
+        self.master.configure(bg="#ffffff")
         self.master.resizable(False,False)
 
         self.result_var = tk.StringVar()
@@ -39,23 +39,23 @@ class Calculator:
         # multiply_button.image = multiply_image 
         # multiply_button.grid(row=2, column=3, sticky="nsew", padx=10, pady=10)
 
-        multiply_button = self.create_button_image("multiply.png", lambda: self.add_to_window("*"), "#f0f0f0")
-        multiply_button.grid(row=2, column=3, sticky="nsew", padx=10, pady=10)
+        # multiply_button = self.create_button_image("multiply.png", lambda: self.add_to_window("*"), "#f0f0f0")
+        # multiply_button.grid(row=2, column=3, sticky="nsew", padx=10, pady=10)
 
-        divide_button = self.create_button_image("divide.png", lambda: self.add_to_window("/"), "#f0f0f0")
-        divide_button.grid(row=1, column=3, sticky="nsew", padx=10, pady=10)
+        # divide_button = self.create_button_image("divide.png", lambda: self.add_to_window("/"), "#f0f0f0")
+        # divide_button.grid(row=1, column=3, sticky="nsew", padx=10, pady=10)
 
-        subtract_button = self.create_button_image("subtract.png", lambda: self.add_to_window("-"), "#f0f0f0")
+        subtract_button = self.create_button_image("subtraction.png", lambda: self.add_to_window("-"), "#ffffff")
         subtract_button.grid(row=3, column=3, sticky="nsew", padx=10, pady=10)
 
-        add_button = self.create_button_image("add.png", lambda: self.add_to_window("+"), "#f0f0f0")
-        add_button.grid(row=4, column=3, sticky="nsew", padx=10, pady=10)
+        # add_button = self.create_button_image("add.png", lambda: self.add_to_window("+"), "#f0f0f0")
+        # add_button.grid(row=4, column=3, sticky="nsew", padx=10, pady=10)
 
 
-        #tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=2, column=3, sticky="nsew")
-        # tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=1, column=3, sticky="nsew")
-        # tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
-        # tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=4, column=3, sticky="nsew")
+        tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=2, column=3, sticky="nsew")
+        tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=1, column=3, sticky="nsew")
+        #tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
+        tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=4, column=3, sticky="nsew")
 
         tk.Button(self.master, text="=", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=self.calculate_result).grid(row=5, column=3, sticky="nsew")
         tk.Button(self.master, text="←", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=self.backspace).grid(row=5, column=2, sticky="nsew")
@@ -82,7 +82,6 @@ class Calculator:
     def clear_window(self):
         self.result_var.set("")
 
-    #TODO: COMPLETE THE FUNCTIONS TOO
     def calculate_result(self):
         expression = self.result_var.get()
         if expression:
