@@ -48,6 +48,9 @@ python app.py
 
 Contributions are welcome! If you have any suggestions, enhancements, or bug fixes, please open an issue or submit a pull request.
 
+## License
+
+This project is licensed under the MIT License.
 
 ## Download
 
