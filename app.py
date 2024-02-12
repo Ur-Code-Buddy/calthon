@@ -66,7 +66,8 @@ class Calculator:
     def create_button_image(self, image_path, command, bg_color):
         width = 40
         height = 40
-        load_image = Image.open(image_path)
+        additional_path = "GitImage"
+        load_image = Image.open(additional_path + "/" + image_path)
         load_image = load_image.resize((width, height))
         render = ImageTk.PhotoImage(load_image)
         button = tk.Button(self.master, image=render, bd=0, bg=bg_color, command=command)
