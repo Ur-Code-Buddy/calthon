@@ -23,7 +23,7 @@ git clone https://github.com/Ur-Code-Buddy/calthon.git
 2. Navigate to the project directory:
 
 ```
-cd calthon-main
+cd calthon
 ```
 
 3. Install the required dependencies using pip:
