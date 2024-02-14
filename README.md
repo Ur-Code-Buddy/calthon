@@ -42,7 +42,7 @@ python app.py
 
 ## Screenshots
 
-![Calculator Screenshot](screenshots/calculator_screenshots1.png)
+![Calculator Screenshot](screenshots/calculator_homescreen.png)
 
 ## Contributing
 
