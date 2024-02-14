@@ -40,6 +40,28 @@ Run the `app.py` file to start the calculator application:
 python app.py
 ```
 
+### Running the Executable
+
+If you prefer running the executable file, simply double-click on `app.exe` in the project directory.
+
+## Screenshots
+
+![Calculator Screenshot](screenshots/calculator_homescreen.png)
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, enhancements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Download
+
+You can download the repository as a zip file using the following link:
+
+[Download ZIP](https://github.com/Ur-Code-Buddy/calthon/archive/main.zip)
+
 ## Screenshots
 
 ![Calculator Screenshot](screenshots/calculator_homescreen.png)
