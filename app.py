@@ -45,8 +45,8 @@ class Calculator:
         # divide_button = self.create_button_image("divide.png", lambda: self.add_to_window("/"), "#f0f0f0")
         # divide_button.grid(row=1, column=3, sticky="nsew", padx=10, pady=10)
 
-        subtract_button = self.create_button_image("subtraction.png", lambda: self.add_to_window("-"), "#ffffff")
-        subtract_button.grid(row=3, column=3, sticky="nsew", padx=10, pady=10)
+        # subtract_button = self.create_button_image("subtraction.png", lambda: self.add_to_window("-"), "#ffffff")
+        # subtract_button.grid(row=3, column=3, sticky="nsew", padx=10, pady=10)
 
         # add_button = self.create_button_image("add.png", lambda: self.add_to_window("+"), "#f0f0f0")
         # add_button.grid(row=4, column=3, sticky="nsew", padx=10, pady=10)
@@ -54,7 +54,7 @@ class Calculator:
 
         tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=2, column=3, sticky="nsew")
         tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=1, column=3, sticky="nsew")
-        #tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
+        tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=3, column=3, sticky="nsew")
         tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=4, column=3, sticky="nsew")
 
         tk.Button(self.master, text="=", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=self.calculate_result).grid(row=5, column=3, sticky="nsew")
