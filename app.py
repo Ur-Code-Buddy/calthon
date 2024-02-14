@@ -13,7 +13,8 @@ class Calculator:
         self.result_var = tk.StringVar()
         self.result_var.set("")
 
-        self.entry = tk.Entry(self.master, textvariable=self.result_var, font=("Serif", 20), bd=1, relief=tk.SOLID, bg="#add8e6")
+        validate_command = master.register(self.validate_input)
+        self.entry = tk.Entry(self.master, textvariable=self.result_var, font=("Serif", 20), bd=1, relief=tk.SOLID,bg="#add8e6", validate="key", validatecommand=(validate_command, '%P'))
         self.entry.grid(row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
 
         tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=5, column=1, sticky="nsew")
@@ -91,6 +92,10 @@ class Calculator:
         else:
             result = None
         pass
+
+    def validate_input(self, new_text):
+        allowed_chars = set("0123456789+-*/().")
+        return all(char in allowed_chars for char in new_text)
 
     def backspace(self):
         current_text = self.result_var.get()
