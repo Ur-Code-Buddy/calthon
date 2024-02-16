@@ -107,25 +107,28 @@ class Calculator:
         self.result_var.set("")
 
     def calculate_result(self):
-        try:
-            expression = self.result_var.get()
-            modified_expression = ""
-            for char in expression:
-                if char == "(" and char.index != 0:
-                    modified_expression += "*("
-                else:
-                    modified_expression += char
+        expression = self.result_var.get()
+        modified_expression = ""
+        for char in expression:
+            operators = set("(+-*/√")
+            print(char, expression.index(char), (expression[expression.index(char) - 1] not in operators) )
+            print("modifided: ", modified_expression)
+            if char == "(" and expression.index(char) != 0 and (expression[expression.index(char) - 1] not in operators) : 
+                modified_expression += "*("
+                print("modifided(ai): ", modified_expression)
+            else: 
+                modified_expression += char
+                print("modifided(ai): ", modified_expression)
 
-            if expression:
-                modified_expression = expression.replace("√", "math.sqrt")
-                result = eval(modified_expression)
-                self.result_var.set(result)
-            else:
-                result = None
+        if expression:
+            modified_expression = modified_expression.replace("√", "math.sqrt")
+            print(modified_expression) #printing here
+            result = eval(modified_expression,{},{"math":math})
+            self.result_var.set(result)
+        else:
+            result = None
 
-        except:
-            messagebox.showerror("Something went wrong")
-
+    
     def validate_input(self, new_text):
         allowed_chars = set("0123456789+-*/().")
         return all(char in allowed_chars for char in new_text)
