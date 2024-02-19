@@ -46,7 +46,7 @@ class Calculator:
         tk.Button(self.master, text="x²", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("**2")).grid(row=6, column=1, sticky="nsew")
 
 
-    def create_button_image(self, image_path, command, bg_color):
+    def create_button_image(self, image_path, command, bg_color):  #this is for the PIL library when we were supposed to use images, since that changed, we can ignore this for now. 
         width = 40
         height = 40
         additional_path = "GitImage"
@@ -59,6 +59,20 @@ class Calculator:
     
 
     def add_to_window(self, value):
+        """
+        Appends characters or operators to the expression displayed in a GUI window.
+        
+        Parameters:
+            value (str): The character or operator to be added.
+            
+        How it works:
+            - Retrieves the current expression from the GUI window.
+            - If the value is '√', wraps the current expression with square root brackets.
+            - If the value is a digit:
+                - If the last character is a closing parenthesis, appends a multiplication symbol before adding the digit. ) -> )*
+                - Otherwise, directly appends the digit.
+            - For other characters or operators, directly appends them to the current expression.
+        """
         current_text = self.result_var.get()
         if value == "√":
             self.result_var.set("√(" + current_text + ")")
@@ -71,31 +85,49 @@ class Calculator:
             self.result_var.set(current_text + value)
 
 
+
     
-    def clear_window(self):
+    def clear_window(self):  #clears the screen to ""
         self.result_var.set("")
 
     def calculate_result(self):
+        """
+        Evaluates the mathematical expression in the GUI window and updates the result accordingly.
+        
+        How it works:
+            - Modifies the expression to ensure proper multiplication syntax.
+            - Replaces the square root symbol with the appropriate function call.
+            - Checks for division by zero and handles potential errors during evaluation.
+            - Updates the GUI window with the calculated result or displays an error message.
+        """
         expression = self.result_var.get()
         modified_expression = ""
         for char in expression:
             operators = set("(+-*/√")
+
             if char == "(" and expression.index(char) != 0 and (expression[expression.index(char) - 1] not in operators): 
                 modified_expression += "*("
             else: 
                 modified_expression += char
+            # Checks if the current character is an opening parenthesis and it's not the first character in the expression, and the character before it is not an operator.
+            # If all conditions are met, it inserts a multiplication symbol before the opening parenthesis to ensure proper syntax.
+            # Otherwise, it simply appends the current character to the modified expression.
 
         try:
             if expression:
                 modified_expression = modified_expression.replace("√", "math.sqrt")
                 # Check for division by zero
                 if "/0" in modified_expression:
-                    raise ZeroDivisionError
+                    raise ZeroDivisionError #if divided by zero throw an error
                 result = eval(modified_expression, {}, {"math": math})
                 result = round(result, 5)
                 self.result_var.set(result)
+            # Replaces the square root symbol with the appropriate function call from the 'math' module.
+            # Evaluates the modified expression using Python's 'eval' function, with 'math' module available for use.
+            # Rounds the result to 5 decimal places for precision then sets the result in the GUI window for display.
+
         except ZeroDivisionError:
-            messagebox.showerror("Error", "Cannot divide by zero")
+            messagebox.showerror("Error", "Cannot divide by zero") #if its divided by zero
         except Exception as e:
             messagebox.showerror("Error", str(e))
         else:
@@ -104,7 +136,8 @@ class Calculator:
 
 
 
-    def validate_input(self, new_text):
+
+    def validate_input(self, new_text): #This goes through the char, checks if its in the list, if its not it just ignores it. 
         allowed_chars = set("0123456789+-*/().")
         return all(char in allowed_chars for char in new_text)
 
