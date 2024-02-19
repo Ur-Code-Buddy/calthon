@@ -1,5 +1,4 @@
 import tkinter as tk
-from PIL import Image, ImageTk
 from tkinter import messagebox
 import math
 
@@ -35,23 +34,6 @@ class Calculator:
         tk.Button(self.master, text="AC", font=("Serif", 14), bg="#ffb6c1", bd=1, padx=20, pady=10, command=self.clear_window).grid(row=1, column=0, sticky="nsew")
         tk.Button(self.master, text="(", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("(")).grid(row=1, column=1, sticky="nsew")
         tk.Button(self.master, text=")", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(")")).grid(row=1, column=2, sticky="nsew")
-
-        # multiply_image = tk.PhotoImage(file="multiply.png")
-        # multiply_button = tk.Button(self.master, image=multiply_image, bd=0, bg="#add8e6", command=lambda: self.add_to_window("*"))
-        # multiply_button.image = multiply_image 
-        # multiply_button.grid(row=2, column=3, sticky="nsew", padx=10, pady=10)
-
-        # multiply_button = self.create_button_image("multiply.png", lambda: self.add_to_window("*"), "#f0f0f0")
-        # multiply_button.grid(row=2, column=3, sticky="nsew", padx=10, pady=10)
-
-        # divide_button = self.create_button_image("divide.png", lambda: self.add_to_window("/"), "#f0f0f0")
-        # divide_button.grid(row=1, column=3, sticky="nsew", padx=10, pady=10)
-
-        # subtract_button = self.create_button_image("subtraction.png", lambda: self.add_to_window("-"), "#ffffff")
-        # subtract_button.grid(row=3, column=3, sticky="nsew", padx=10, pady=10)
-
-        # add_button = self.create_button_image("add.png", lambda: self.add_to_window("+"), "#f0f0f0")
-        # add_button.grid(row=4, column=3, sticky="nsew", padx=10, pady=10)
 
 
         tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=2, column=3, sticky="nsew")
