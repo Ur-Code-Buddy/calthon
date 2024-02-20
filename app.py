@@ -105,15 +105,6 @@ class Calculator:
         modified_expression = ""
 
         for i, char in enumerate(expression):
-            print(
-                modified_expression,
-                " current char : ",
-                char,
-                "is it the first? : ",
-                i != 0,
-                "is it followed by an operator :",
-                (expression[i - 1] not in operators) if i != 0 else False,
-            )
             if char == "(" and i != 0 and (expression[i - 1] not in operators):
                 modified_expression += "*("
             else:
