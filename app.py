@@ -101,17 +101,24 @@ class Calculator:
             - Updates the GUI window with the calculated result or displays an error message.
         """
         expression = self.result_var.get()
+        operators = set("(+-*/√")
         modified_expression = ""
-        for char in expression:
-            operators = set("(+-*/√")
 
-            if char == "(" and expression.index(char) != 0 and (expression[expression.index(char) - 1] not in operators): 
+        for i, char in enumerate(expression):
+            print(
+                modified_expression,
+                " current char : ",
+                char,
+                "is it the first? : ",
+                i != 0,
+                "is it followed by an operator :",
+                (expression[i - 1] not in operators) if i != 0 else False,
+            )
+            if char == "(" and i != 0 and (expression[i - 1] not in operators):
                 modified_expression += "*("
-            else: 
+            else:
                 modified_expression += char
-            # Checks if the current character is an opening parenthesis and it's not the first character in the expression, and the character before it is not an operator.
-            # If all conditions are met, it inserts a multiplication symbol before the opening parenthesis to ensure proper syntax.
-            # Otherwise, it simply appends the current character to the modified expression.
+
 
         try:
             if expression:
@@ -119,6 +126,7 @@ class Calculator:
                 # Check for division by zero
                 if "/0" in modified_expression:
                     raise ZeroDivisionError #if divided by zero throw an error
+                print(modified_expression)
                 result = eval(modified_expression, {}, {"math": math})
                 result = round(result, 5)
                 self.result_var.set(result)
@@ -132,7 +140,6 @@ class Calculator:
             messagebox.showerror("Error", str(e))
         else:
             result = None
-
 
 
 
