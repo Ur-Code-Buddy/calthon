@@ -28,33 +28,35 @@ class Calculator:
 
 
 
-        tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=6, column=1, sticky="nsew")
-        tk.Button(self.master, text="0", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("0")).grid(row=6, column=0, sticky="nsew")
-        tk.Button(self.master, text="1", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("1")).grid(row=5, column=0, sticky="nsew")
-        tk.Button(self.master, text="2", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("2")).grid(row=5, column=1, sticky="nsew")
-        tk.Button(self.master, text="3", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("3")).grid(row=5, column=2, sticky="nsew")
-        tk.Button(self.master, text="4", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("4")).grid(row=4, column=0, sticky="nsew")
-        tk.Button(self.master, text="5", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("5")).grid(row=4, column=1, sticky="nsew")
-        tk.Button(self.master, text="6", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("6")).grid(row=4, column=2, sticky="nsew")
-        tk.Button(self.master, text="7", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("7")).grid(row=3, column=0, sticky="nsew")
-        tk.Button(self.master, text="8", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("8")).grid(row=3, column=1, sticky="nsew")
-        tk.Button(self.master, text="9", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("9")).grid(row=3, column=2, sticky="nsew")
+        tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=7, column=1, sticky="nsew")
+        tk.Button(self.master, text="0", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("0")).grid(row=7, column=0, sticky="nsew")
+        tk.Button(self.master, text="1", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("1")).grid(row=6, column=0, sticky="nsew")
+        tk.Button(self.master, text="2", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("2")).grid(row=6, column=1, sticky="nsew")
+        tk.Button(self.master, text="3", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("3")).grid(row=6, column=2, sticky="nsew")
+        tk.Button(self.master, text="4", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("4")).grid(row=5, column=0, sticky="nsew")
+        tk.Button(self.master, text="5", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("5")).grid(row=5, column=1, sticky="nsew")
+        tk.Button(self.master, text="6", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("6")).grid(row=5, column=2, sticky="nsew")
+        tk.Button(self.master, text="7", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("7")).grid(row=4, column=0, sticky="nsew")
+        tk.Button(self.master, text="8", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("8")).grid(row=4, column=1, sticky="nsew")
+        tk.Button(self.master, text="9", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("9")).grid(row=4, column=2, sticky="nsew")
 
 
 
         tk.Button(self.master, text="AC", font=("Serif", 14), bg="#ffb6c1", bd=1, padx=20, pady=10, command=self.clear_window).grid(row=2, column=0, sticky="nsew")
         tk.Button(self.master, text="(", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("(")).grid(row=2, column=1, sticky="nsew")
         tk.Button(self.master, text=")", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(")")).grid(row=2, column=2, sticky="nsew")
+        tk.Button(self.master, text="π", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("π")).grid(row=2, column=3, sticky="nsew")
 
-        tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=3, column=3, sticky="nsew")
-        tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=2, column=3, sticky="nsew")
-        tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=4, column=3, sticky="nsew")
-        tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=5, column=3, sticky="nsew")
+        tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=4, column=3, sticky="nsew")
+        tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=3, column=3, sticky="nsew")
+        tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=5, column=3, sticky="nsew")
+        tk.Button(self.master, text="+", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("+")).grid(row=6, column=3, sticky="nsew")
 
-        tk.Button(self.master, text="=", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=self.evaluate_and_set).grid(row=6, column=3, sticky="nsew")
-        tk.Button(self.master, text="←", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=self.backspace).grid(row=6, column=2, sticky="nsew")
-        tk.Button(self.master, text="√", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("√")).grid(row=7, column=0, sticky="nsew")
-        tk.Button(self.master, text="x²", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("**2")).grid(row=7, column=1, sticky="nsew")
+        tk.Button(self.master, text="=", font=("Serif", 14), bg="#7dcae3", bd=1, padx=20, pady=10, command=self.evaluate_and_set).grid(row=7, column=3, sticky="nsew")
+        tk.Button(self.master, text="←", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=self.backspace).grid(row=7, column=2, sticky="nsew")
+        tk.Button(self.master, text="√", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("√")).grid(row=3, column=0, sticky="nsew")
+        tk.Button(self.master, text="x²", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("^2")).grid(row=3, column=1, sticky="nsew")
+        tk.Button(self.master, text="^", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("^")).grid(row=3, column=2, sticky="nsew")
 
 
     def create_button_image(self, image_path, command, bg_color):  #this is for the PIL library when we were supposed to use images, since that changed, we can ignore this for now. 
@@ -103,6 +105,7 @@ class Calculator:
     
     def clear_window(self):  #clears the screen to ""
         self.result_var.set("")
+        self.current_result.set("")
 
     def calculate_result(self):
         """
@@ -115,20 +118,26 @@ class Calculator:
             - Updates the GUI window with the calculated result or displays an error message.
         """
         expression = self.result_var.get()
-        operators = set("(+-*/√")
+        operators = set("(+-*/√π")
+        pi_operators = set(")0987654321")
         modified_expression = ""
 
         for i, char in enumerate(expression):
             #! Try equation: (8/99)*5(5**6)
             if char == "(" and i != 0 and (expression[i - 1] not in operators):
                 modified_expression += "*("
+            elif char == "π" and i != 0 and (expression[i-1] in pi_operators):
+                modified_expression += "*3.141592"
             else:
                 modified_expression += char
+
+            
+
 
 
 
         if expression:
-            modified_expression = modified_expression.replace("√", "math.sqrt")
+            modified_expression = modified_expression.replace("√", "math.sqrt").replace("^","**").replace("π","3.141592")
             # Check for division by zero
             if "/0" in modified_expression:
                 raise ZeroDivisionError #if divided by zero throw an error
