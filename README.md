@@ -47,7 +47,7 @@ If you prefer running the executable file, simply double-click on `app.exe` in t
 
 ## Screenshots
 
-![Calculator Screenshot](calculator_homescreen.png)
+![Calculator Screenshot](Images/calc_look.png)
 
 ## Contributing
 
