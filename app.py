@@ -24,10 +24,6 @@ class Calculator:
         self.current_result_label = tk.Label(self.master, textvariable=self.current_result, font=("Serif", 16), bd=0.5, relief=tk.SOLID, bg="#6fcbfc", anchor="e")
         self.current_result_label.grid(row=1, column=0, columnspan=4, sticky="nsew", padx=10, pady=(2, 5)) 
 
-
-
-
-
         tk.Button(self.master, text=".", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(".")).grid(row=7, column=1, sticky="nsew")
         tk.Button(self.master, text="0", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("0")).grid(row=7, column=0, sticky="nsew")
         tk.Button(self.master, text="1", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("1")).grid(row=6, column=0, sticky="nsew")
@@ -40,14 +36,11 @@ class Calculator:
         tk.Button(self.master, text="8", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("8")).grid(row=4, column=1, sticky="nsew")
         tk.Button(self.master, text="9", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("9")).grid(row=4, column=2, sticky="nsew")
 
-
-
         tk.Button(self.master, text="AC", font=("Serif", 14), bg="#ffb6c1", bd=1, padx=20, pady=10, command=self.clear_window).grid(row=2, column=0, sticky="nsew")
         tk.Button(self.master, text="(", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("(")).grid(row=2, column=1, sticky="nsew")
         tk.Button(self.master, text=")", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(")")).grid(row=2, column=2, sticky="nsew")
         tk.Button(self.master, text="√", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("√")).grid(row=2, column=3, sticky="nsew")
         
-
         tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=4, column=3, sticky="nsew")
         tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=3, column=3, sticky="nsew")
         tk.Button(self.master, text="-", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("-")).grid(row=5, column=3, sticky="nsew")
@@ -101,9 +94,6 @@ class Calculator:
         currentResult = self.calculate_result()
         self.current_result.set(currentResult)
 
-
-
-    
     def clear_window(self):  #clears the screen to ""
         self.result_var.set("")
         self.current_result.set("")
@@ -133,10 +123,6 @@ class Calculator:
                 modified_expression += char
 
             
-
-
-
-
         if expression:
             modified_expression = modified_expression.replace("√", "math.sqrt").replace("^","**").replace("π","3.141592")
             # Check for division by zero
@@ -150,7 +136,6 @@ class Calculator:
         # Replaces the square root symbol with the appropriate function call from the 'math' module.
         # Evaluates the modified expression using Python's 'eval' function, with 'math' module available for use.
         # Rounds the result to 5 decimal places for precision then sets the result in the GUI window for display.
-
 
         else:
             result = None
