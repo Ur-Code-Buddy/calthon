@@ -21,7 +21,7 @@ class Calculator:
         self.result_label = tk.Label(self.master, textvariable=self.result_var, font=("Serif", 24), bd=1.5, relief=tk.SOLID, bg="#add8e6", anchor="e")
         self.result_label.grid(row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=(5, 2)) 
 
-        self.current_result_label = tk.Label(self.master, textvariable=self.current_result, font=("Serif", 16), bd=0.5, relief=tk.SOLID, bg="#ffc0cb", anchor="e")
+        self.current_result_label = tk.Label(self.master, textvariable=self.current_result, font=("Serif", 16), bd=0.5, relief=tk.SOLID, bg="#6fcbfc", anchor="e")
         self.current_result_label.grid(row=1, column=0, columnspan=4, sticky="nsew", padx=10, pady=(2, 5)) 
 
 
@@ -45,7 +45,8 @@ class Calculator:
         tk.Button(self.master, text="AC", font=("Serif", 14), bg="#ffb6c1", bd=1, padx=20, pady=10, command=self.clear_window).grid(row=2, column=0, sticky="nsew")
         tk.Button(self.master, text="(", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("(")).grid(row=2, column=1, sticky="nsew")
         tk.Button(self.master, text=")", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window(")")).grid(row=2, column=2, sticky="nsew")
-        tk.Button(self.master, text="π", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("π")).grid(row=2, column=3, sticky="nsew")
+        tk.Button(self.master, text="√", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("√")).grid(row=2, column=3, sticky="nsew")
+        
 
         tk.Button(self.master, text="*", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("*")).grid(row=4, column=3, sticky="nsew")
         tk.Button(self.master, text="/", font=("Serif", 14), bg="#add8e6", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("/")).grid(row=3, column=3, sticky="nsew")
@@ -54,7 +55,7 @@ class Calculator:
 
         tk.Button(self.master, text="=", font=("Serif", 14), bg="#7dcae3", bd=1, padx=20, pady=10, command=self.evaluate_and_set).grid(row=7, column=3, sticky="nsew")
         tk.Button(self.master, text="←", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=self.backspace).grid(row=7, column=2, sticky="nsew")
-        tk.Button(self.master, text="√", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("√")).grid(row=3, column=0, sticky="nsew")
+        tk.Button(self.master, text="π", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("π")).grid(row=3, column=0, sticky="nsew")
         tk.Button(self.master, text="x²", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("^2")).grid(row=3, column=1, sticky="nsew")
         tk.Button(self.master, text="^", font=("Serif", 14), bg="#d3d3d3", bd=1, padx=20, pady=10, command=lambda: self.add_to_window("^")).grid(row=3, column=2, sticky="nsew")
 
